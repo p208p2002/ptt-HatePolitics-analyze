@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b89b6625bd8828641ba523b380449c9c",
+    "revision": "ff4fa04afbb671c57dca1130adb57d88",
     "url": "https://p208p2002.github.io/ptt-gossiping-relation-analyze/index.html"
   },
   {
