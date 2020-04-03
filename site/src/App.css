@@ -44,10 +44,11 @@ tbody > tr > td{
     float: right;
 }
 
-a:hover{
+span:hover, a:hover{
     color: white !important;
     text-decoration: none !important;
     background-color: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
 }
 
 a:visited {
@@ -72,7 +73,7 @@ a:link {
     vertical-align: middle;
 }
 
-#logo:link, #logo:visited, #logo:hover {
+#logo, #logo:link, #logo:visited, #logo:hover {
     text-decoration: none;
     color: #ff6;
 }

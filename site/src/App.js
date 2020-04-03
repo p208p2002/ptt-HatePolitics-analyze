@@ -42,10 +42,10 @@ export class App extends Component {
           <div id="head">
             <div id="topbar-container">
               <div id="topbar" className="bbs-content container">
-                <a id="logo" href="#">批踢踢八卦版分析</a>
+                <span id="logo">批踢踢八卦版分析</span>
                 <span>›</span>
-                <a className="board" href="#"><span class="board-label">看板 </span>Gossiping</a>
-                <a class="right small" href="#">GitHub</a>
+                <span className="board"><span class="board-label">看板 </span>Gossiping</span>
+                <a class="right small" href="https://github.com/p208p2002/ptt-gossiping-relation-analyze">GitHub</a>
               </div>
             </div>
             <div style={{ display:'block',marginTop: 40 }}>
