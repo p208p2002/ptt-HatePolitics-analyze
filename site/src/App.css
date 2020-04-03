@@ -1,3 +1,24 @@
+.ptt-btn{
+    position: relative;
+    display: inline-block;
+    border: 1px solid #666;
+    background-color: #444;
+    padding: 0 1ex;
+    text-decoration: none;
+    color: #ddd;
+    box-sizing: border-box;
+    font-size: small;
+    text-align: center;
+    line-height: 40px;
+}
+
+.ptt-btn.selected {
+    border-color: #ccc;
+    background-color: #bbb;
+    color: #000;
+    z-index: 2;
+}
+
 thead{
     color: #ff6;
 }

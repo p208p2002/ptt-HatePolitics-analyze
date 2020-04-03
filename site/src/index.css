@@ -2,7 +2,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Noto Serif TC', serif !important;
+  /* font-family: 'Noto Serif TC', serif !important; */
+  font-family: "細明體", "AR PL UMing TW", "Inconsolata", "LiSongPro", monospace !important;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: black !important;

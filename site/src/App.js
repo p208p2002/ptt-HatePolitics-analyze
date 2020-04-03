@@ -37,7 +37,7 @@ export class App extends Component {
     let fullMode = query === '?mode=full' ? true : false
 
     return (
-      <div>
+      <div id="ptt-relation"> 
         {!fullMode ? (
           <div id="head">
             <div id="topbar-container">
@@ -53,7 +53,7 @@ export class App extends Component {
             </div>
             <div className="text-center container">
               <button
-                className="btn"
+                className="ptt-btn selected"
                 style={{
                   marginTop: '5px',
                   backgroundColor: 'rgba(255,255,255,0.7)'
@@ -105,7 +105,6 @@ export class App extends Component {
                     </tr>
                   </tbody>
                 </table>
-                <br />
               </div>
               <br/>
               <div data-tip="與其他節點距離度量" className="rwd-component" style={{ margin: '0 auto' }}>
@@ -147,7 +146,6 @@ export class App extends Component {
                     </tr>
                   </tbody>
                 </table>
-                <br />
               </div>
               <br/>
               <div className="rwd-component" style={{ margin: '0 auto' }}>
