@@ -1,4 +1,87 @@
+thead{
+    color: #ff6;
+}
+
+tbody > tr > th{
+    color: #6f6;
+}
+
+tbody > tr > td{
+    color: #aaa;
+}
+
+#topbar > * {
+    display: inline-block;
+    height: 100%;
+    line-height: 40px;
+    vertical-align: middle;
+    padding: 0 5px;
+    float: left;
+}
+
+#topbar > *.right {
+    float: right;
+}
+
+a:hover{
+    color: white !important;
+    text-decoration: none !important;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+a:visited {
+    color: #888;
+    text-decoration: none;
+}
+
+a:link {
+    color: #aaa;
+}
+
+.small {
+    font-size: small;
+}
+
+.bbs-content {
+    font-family: "細明體", "AR PL UMing TW", "Inconsolata", "LiSongPro", monospace;
+}
+
+#topbar .board-label {
+    font-size: small;
+    vertical-align: middle;
+}
+
+#logo:link, #logo:visited, #logo:hover {
+    text-decoration: none;
+    color: #ff6;
+}
+
+#topbar .board {
+    color: #fff;
+}
+
+#topbar-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 99;
+    background-color: #0c0a66;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+#topbar {
+    margin: 0 auto;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    color: #aaa;
+}
+
 .rwd-component{
+    padding: 10px;
+    background: #111;
     width: 70% !important;
 }
 
@@ -14,6 +97,8 @@
 
 @media(max-width:767.98px){
     .rwd-component{
+        padding: 10px;
+        background: #111;
         width: 100% !important;
     }   
 }

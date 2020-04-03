@@ -12,14 +12,6 @@ export class App extends Component {
     }
   }
 
-  componentDidMount() {
-    // window.addEventListener('resize', () => {
-    //   setTimeout(() => {
-    //     window.location.reload()
-    //   }, 200)
-    // });
-  }
-
   componentWillMount() {
     let isMobile = function () {
       var check = false;
@@ -47,23 +39,18 @@ export class App extends Component {
     return (
       <div>
         {!fullMode ? (
-          <div>
-            <div className="container">
-              <div className="d-none d-sm-block">
-                <a className="github-fork-ribbon" href="https://github.com/p208p2002/novel-relation-chart" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
-              </div>
-              <br />
-              <div className="text-center" style={{ width: '100%' }}>
-                <img
-                  style={{ maxWidth: '550px', width: '100%' }}
-                  src={require("./assets/imgs/logo.png")}
-                  alt="絕代雙驕人物關係圖"
-                  srcSet="" />
-                <br />
-                <br />
+          <div id="head">
+            <div id="topbar-container">
+              <div id="topbar" className="bbs-content container">
+                <a id="logo" href="#">批踢踢八卦版分析</a>
+                <span>›</span>
+                <a className="board" href="#"><span class="board-label">看板 </span>Gossiping</a>
+                <a class="right small" href="#">GitHub</a>
               </div>
             </div>
-            <ChartView width="100%" height={ChartViewHeight} />
+            <div style={{ display:'block',marginTop: 40 }}>
+              <ChartView width="100%" height={ChartViewHeight} />
+            </div>
             <div className="text-center container">
               <button
                 className="btn"
@@ -120,6 +107,7 @@ export class App extends Component {
                 </table>
                 <br />
               </div>
+              <br/>
               <div data-tip="與其他節點距離度量" className="rwd-component" style={{ margin: '0 auto' }}>
                 <p style={{ top: '10px', position: 'relative' }} className="text-bg">Closeness Centrality</p>
                 <table
@@ -161,7 +149,8 @@ export class App extends Component {
                 </table>
                 <br />
               </div>
-              <div className="rwd-component" style={{margin:'0 auto'}}>
+              <br/>
+              <div className="rwd-component" style={{ margin: '0 auto' }}>
                 <p style={{ top: '10px', position: 'relative' }} className="text-bg">Degree Distribution</p>
                 <img
                   className="img-thumbnail img-fluid"
