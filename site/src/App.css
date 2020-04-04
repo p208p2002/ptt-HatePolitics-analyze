@@ -1,3 +1,26 @@
+.ptt-text{
+    color: #bbb;
+}
+
+.article-metaline {
+    margin: 0;
+    padding: 0;
+    background-color: #008;
+    line-height: 100%;
+}
+
+.article-meta-tag {
+    padding: 0 1ex;
+    background-color: #999;
+    color: #008;
+}
+
+.article-meta-value {
+    padding: 0 1ex;
+    background-color: #008;
+    color: #999;
+}
+
 .ptt-btn{
     position: relative;
     display: inline-block;

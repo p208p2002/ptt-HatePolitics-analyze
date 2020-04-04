@@ -1,9 +1,7 @@
 // import ForceGraph3D from '3d-force-graph';
 import ForceGraph from 'force-graph';
 import React, { Component } from 'react'
-// import SpriteText from 'three-spritetext';
-import chartData from '../../assets/chart_data.json'
-// var THREE = require('three');
+
 
 export class Index extends Component {
   constructor(props) {
@@ -47,13 +45,14 @@ export class Index extends Component {
   }
 
   componentDidMount() {
+    let chartData=this.props.chartData
     let jsonData = this.preprocessData(chartData)
     console.log(jsonData)
 
     let { fullMode = false } = this.props
-    var width = document.getElementById('3d-graph').offsetWidth
-    var height = document.getElementById('3d-graph').offsetHeight
-    const elem = document.getElementById('3d-graph');
+    var width = document.getElementById(this.props.chartID).offsetWidth
+    var height = document.getElementById(this.props.chartID).offsetHeight
+    const elem = document.getElementById(this.props.chartID);
     let highlightNodes = [];
     let highlightLink = null;
     const Graph = ForceGraph()(elem)
@@ -103,7 +102,7 @@ export class Index extends Component {
       .onNodeClick(node => {
         // Center/zoom on node
         Graph.centerAt(node.x, node.y, 1000);
-        Graph.zoom(0.7, 1200);
+        Graph.zoom(0.5, 1200);
       });
 
     // // Spread nodes a little wider
@@ -114,7 +113,7 @@ export class Index extends Component {
     return (
       <div style={{overflow:'hidden'}}>
         <div style={{ width: this.props.width, height: this.props.height }}>
-          <div id="3d-graph" style={{ width: '100%', height: '100%' }}></div>
+          <div id={this.props.chartID} style={{ width: '100%', height: '100%' }}></div>
         </div>
       </div>
     )
