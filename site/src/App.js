@@ -44,8 +44,8 @@ export class App extends Component {
               <div id="topbar" className="bbs-content container">
                 <span id="logo">批踢踢八卦版分析</span>
                 <span>›</span>
-                <span className="board"><span class="board-label">看板 </span>Gossiping</span>
-                <a class="right small" href="https://github.com/p208p2002/ptt-gossiping-relation-analyze">GitHub</a>
+                <span className="board"><span className="board-label">看板 </span>Gossiping</span>
+                <a className="right small" href="https://github.com/p208p2002/ptt-gossiping-relation-analyze">GitHub</a>
               </div>
             </div>
             <div style={{ display:'block',marginTop: 40 }}>
@@ -152,7 +152,7 @@ export class App extends Component {
                 <p style={{ top: '10px', position: 'relative' }} className="text-bg">Degree Distribution</p>
                 <img
                   className="img-thumbnail img-fluid"
-                  src={require('./assets/imgs/DegreeDistribution.png')} width="100%" alt="" srcset="" />
+                  src={require('./assets/imgs/DegreeDistribution.png')} width="100%" alt="" srcSet="" />
               </div>
               <br />
             </div>
