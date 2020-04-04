@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "42570143ff76e6dc5dd949838538e503",
+    "revision": "f793384e29e8138bf5ae374a62c70eeb",
     "url": "https://p208p2002.github.io/ptt-gossiping-relation-analyze/index.html"
   },
   {
-    "revision": "2bfb57a67b8c438c5157",
-    "url": "https://p208p2002.github.io/ptt-gossiping-relation-analyze/static/css/main.53440bca.chunk.css"
+    "revision": "5afdf2674a81bd2d33bd",
+    "url": "https://p208p2002.github.io/ptt-gossiping-relation-analyze/static/css/main.29914183.chunk.css"
   },
   {
     "revision": "9d97e1ecf3cb10d20c93",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://p208p2002.github.io/ptt-gossiping-relation-analyze/static/js/2.52e2d6e9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2bfb57a67b8c438c5157",
+    "revision": "5afdf2674a81bd2d33bd",
     "url": "https://p208p2002.github.io/ptt-gossiping-relation-analyze/static/js/main.4a878a9a.chunk.js"
   },
   {

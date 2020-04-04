@@ -14,3 +14,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@media(max-width:576px){
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* font-family: 'Noto Serif TC', serif !important; */
+    font-family: "細明體", "AR PL UMing TW", "Inconsolata", "LiSongPro", monospace !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: black !important;
+    font-size: 12px !important;
+  }
+  .container {
+    width: 100%;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

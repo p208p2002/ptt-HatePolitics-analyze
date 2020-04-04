@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://p208p2002.github.io/ptt-gossiping-relation-analyze/precache-manifest.c315f0c498f99effc91edb86aa246d1d.js"
+  "https://p208p2002.github.io/ptt-gossiping-relation-analyze/precache-manifest.45e4db9845df47f1c3859d4381782dd6.js"
 );
 
 self.addEventListener('message', (event) => {
