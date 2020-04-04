@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ff4fa04afbb671c57dca1130adb57d88",
+    "revision": "f96dd67e7caa4a1948ac84f3a2d15e7d",
     "url": "https://p208p2002.github.io/ptt-gossiping-relation-analyze/index.html"
   },
   {
-    "revision": "7a632e0b51e3d6ec8168",
+    "revision": "a2142ed3d0aa9989797b",
     "url": "https://p208p2002.github.io/ptt-gossiping-relation-analyze/static/css/main.e8b12f7b.chunk.css"
   },
   {
-    "revision": "74a9fef0f2b496f1ec68",
-    "url": "https://p208p2002.github.io/ptt-gossiping-relation-analyze/static/js/2.5046c1ce.chunk.js"
+    "revision": "3c4a1ee4ad0676dbe2f3",
+    "url": "https://p208p2002.github.io/ptt-gossiping-relation-analyze/static/js/2.956b2721.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "https://p208p2002.github.io/ptt-gossiping-relation-analyze/static/js/2.5046c1ce.chunk.js.LICENSE.txt"
+    "url": "https://p208p2002.github.io/ptt-gossiping-relation-analyze/static/js/2.956b2721.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7a632e0b51e3d6ec8168",
-    "url": "https://p208p2002.github.io/ptt-gossiping-relation-analyze/static/js/main.2c6fa383.chunk.js"
+    "revision": "a2142ed3d0aa9989797b",
+    "url": "https://p208p2002.github.io/ptt-gossiping-relation-analyze/static/js/main.6215aeb7.chunk.js"
   },
   {
     "revision": "d2d56886f3fc1d5cb49b",
