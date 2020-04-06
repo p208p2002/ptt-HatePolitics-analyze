@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://github.com/p208p2002/ptt-HatePolitics-analyze/precache-manifest.39f17149874e5d59417a00de5d9f26d3.js"
+  "https://p208p2002.github.io/ptt-HatePolitics-analyze/precache-manifest.05e6d82cc856e18add18d6b815d796cd.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -33,7 +33,7 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("https://github.com/p208p2002/ptt-HatePolitics-analyze/index.html"), {
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("https://p208p2002.github.io/ptt-HatePolitics-analyze/index.html"), {
   
   blacklist: [/^\/_/,/\/[^\/?]+\.[^\/]+$/],
 });
