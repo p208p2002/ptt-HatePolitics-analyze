@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "https://p208p2002.github.io/ptt-HatePolitics-analyze/static/css/main.29914183.chunk.css",
-    "main.js": "https://p208p2002.github.io/ptt-HatePolitics-analyze/static/js/main.9178fab4.chunk.js",
-    "main.js.map": "https://p208p2002.github.io/ptt-HatePolitics-analyze/static/js/main.9178fab4.chunk.js.map",
+    "main.js": "https://p208p2002.github.io/ptt-HatePolitics-analyze/static/js/main.15ac39f6.chunk.js",
+    "main.js.map": "https://p208p2002.github.io/ptt-HatePolitics-analyze/static/js/main.15ac39f6.chunk.js.map",
     "runtime-main.js": "https://p208p2002.github.io/ptt-HatePolitics-analyze/static/js/runtime-main.aa9243ac.js",
     "runtime-main.js.map": "https://p208p2002.github.io/ptt-HatePolitics-analyze/static/js/runtime-main.aa9243ac.js.map",
-    "static/js/2.52e2d6e9.chunk.js": "https://p208p2002.github.io/ptt-HatePolitics-analyze/static/js/2.52e2d6e9.chunk.js",
-    "static/js/2.52e2d6e9.chunk.js.map": "https://p208p2002.github.io/ptt-HatePolitics-analyze/static/js/2.52e2d6e9.chunk.js.map",
+    "static/js/2.13717132.chunk.js": "https://p208p2002.github.io/ptt-HatePolitics-analyze/static/js/2.13717132.chunk.js",
+    "static/js/2.13717132.chunk.js.map": "https://p208p2002.github.io/ptt-HatePolitics-analyze/static/js/2.13717132.chunk.js.map",
     "index.html": "https://p208p2002.github.io/ptt-HatePolitics-analyze/index.html",
-    "precache-manifest.05e6d82cc856e18add18d6b815d796cd.js": "https://p208p2002.github.io/ptt-HatePolitics-analyze/precache-manifest.05e6d82cc856e18add18d6b815d796cd.js",
+    "precache-manifest.3cae3adae94cecbb804f0cb375392571.js": "https://p208p2002.github.io/ptt-HatePolitics-analyze/precache-manifest.3cae3adae94cecbb804f0cb375392571.js",
     "service-worker.js": "https://p208p2002.github.io/ptt-HatePolitics-analyze/service-worker.js",
     "static/css/main.29914183.chunk.css.map": "https://p208p2002.github.io/ptt-HatePolitics-analyze/static/css/main.29914183.chunk.css.map",
-    "static/js/2.52e2d6e9.chunk.js.LICENSE.txt": "https://p208p2002.github.io/ptt-HatePolitics-analyze/static/js/2.52e2d6e9.chunk.js.LICENSE.txt",
+    "static/js/2.13717132.chunk.js.LICENSE.txt": "https://p208p2002.github.io/ptt-HatePolitics-analyze/static/js/2.13717132.chunk.js.LICENSE.txt",
     "static/media/DegreeDistribution.png": "https://p208p2002.github.io/ptt-HatePolitics-analyze/static/media/DegreeDistribution.76ccb267.png"
   },
   "entrypoints": [
     "static/js/runtime-main.aa9243ac.js",
-    "static/js/2.52e2d6e9.chunk.js",
+    "static/js/2.13717132.chunk.js",
     "static/css/main.29914183.chunk.css",
-    "static/js/main.9178fab4.chunk.js"
+    "static/js/main.15ac39f6.chunk.js"
   ]
 }

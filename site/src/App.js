@@ -54,21 +54,20 @@ export class App extends Component {
             <div className="context-head">
               <div className="block-head text-left">
                 <div className="article-metaline"><span className="article-meta-tag">作者</span><span className="article-meta-value">Mr.cha-shui-piao(查水表先生)</span></div>
-                <div className="article-metaline"><span className="article-meta-tag">標題</span><span className="article-meta-value">[問卦] 這麼誇張的關係，是不是婉君搞的鬼?</span></div>
+                <div className="article-metaline"><span className="article-meta-tag">標題</span><span className="article-meta-value">[討論] 政黑板潛伏大量婉君?</span></div>
                 <div className="article-metaline"><span className="article-meta-tag">時間</span><span className="article-meta-value">Sat Apr  4 10:04:02 2020</span></div>
               </div>
               <br />
             </div>
             <div className="text-left ptt-text">
-              大家安安<br />
-              婉君一天有四十八小時<br />
-              有沒有婉君天天爆肝工作超辛苦的八卦<br />
-              <br/>
+              婉君跟一般人不同，一天有四十八小時<br />
+              時時刻刻守在電腦前帶風向，以下請看本人的數據分析<br />
+              <br />
             </div>
 
             <div className="chart">
-              <div className="text-left ptt-text" style={{color:'#6f6'}}>
-               共同推文關係
+              <div className="text-left ptt-text" style={{ color: '#6f6' }}>
+                共同推文關係
               </div>
               <ChartView
                 width="100%"
@@ -77,17 +76,8 @@ export class App extends Component {
                 chartData={chartDataPOS}
               />
               <br />
-              <div className="text-left ptt-text" style={{color:'#f66'}}>
-               共同噓文關係
-              </div>
-              <ChartView
-                width="100%"
-                height={ChartViewHeight}
-                chartID={'chart2'}
-                chartData={chartDataNEG}
-              />
             </div>
-
+            {/* chart1-start */}
             <div className="rwd-component" style={{ margin: '0 auto' }}>
               <p style={{ top: '10px', position: 'relative' }} className="text-bg">Dataset Statistics</p>
               <table className="table table-striped table-bordered novel-table">
@@ -102,27 +92,27 @@ export class App extends Component {
                   <tr data-tip="節點數量">
                     <th scope="row">1</th>
                     <td>Nodes</td>
-                    <td>61</td>
+                    <td>1620</td>
                   </tr>
                   <tr data-tip="連接邊數">
                     <th scope="row">2</th>
                     <td>Edges</td>
-                    <td>328</td>
+                    <td>26549</td>
                   </tr>
-                  <tr data-tip="任一故事人物平均存在與12個人的關係">
+                  <tr data-tip="任一節點與其他節點產生多少連結">
                     <th scope="row">3</th>
                     <td>Average degree</td>
-                    <td>12</td>
+                    <td>32.776543</td>
                   </tr>
-                  <tr data-tip="任一個故事人物之間最長為3個人的距離">
+                  <tr data-tip="任一與其他節點的最長距離">
                     <th scope="row">4</th>
                     <td>Diameter</td>
-                    <td>3</td>
+                    <td>7</td>
                   </tr>
-                  <tr data-tip="有70%機率故事中任一位人物的朋友之間也是朋友整個故事劇情中出現的人物可能幾乎都互相認識">
+                  <tr data-tip="傳遞性">
                     <th scope="row">5</th>
                     <td>Transitivity</td>
-                    <td>0.7093</td>
+                    <td>0.618714</td>
                   </tr>
                 </tbody>
               </table>
@@ -176,6 +166,109 @@ export class App extends Component {
                 src={require('./assets/imgs/DegreeDistribution.png')} width="100%" alt="" srcSet="" />
             </div>
             <br />
+            {/* chart1-end */}
+            <div className="chart">
+              <div className="text-left ptt-text" style={{ color: '#f66' }}>
+                共同噓文關係
+              </div>
+              <ChartView
+                width="100%"
+                height={ChartViewHeight}
+                chartID={'chart2'}
+                chartData={chartDataNEG}
+              />
+              <br />
+            </div>
+            {/* chart2-start */}
+            <div className="rwd-component" style={{ margin: '0 auto' }}>
+              <p style={{ top: '10px', position: 'relative' }} className="text-bg">Dataset Statistics</p>
+              <table className="table table-striped table-bordered novel-table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">項目</th>
+                    <th scope="col">數值</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-tip="節點數量">
+                    <th scope="row">1</th>
+                    <td>Nodes</td>
+                    <td>650</td>
+                  </tr>
+                  <tr data-tip="連接邊數">
+                    <th scope="row">2</th>
+                    <td>Edges</td>
+                    <td>55840</td>
+                  </tr>
+                  <tr data-tip="任一節點與其他節點產生多少連結">
+                    <th scope="row">3</th>
+                    <td>Average degree</td>
+                    <td>171.815385</td>
+                  </tr>
+                  <tr data-tip="任一與其他節點的最長距離">
+                    <th scope="row">4</th>
+                    <td>Diameter</td>
+                    <td>3</td>
+                  </tr>
+                  <tr data-tip="傳遞性">
+                    <th scope="row">5</th>
+                    <td>Transitivity</td>
+                    <td>0.792891</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <br />
+            <div data-tip="與其他節點距離度量" className="rwd-component" style={{ margin: '0 auto' }}>
+              <p style={{ top: '10px', position: 'relative' }} className="text-bg">Closeness Centrality</p>
+              <table
+                className="table table-striped table-bordered novel-table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">節點</th>
+                    <th scope="col">數值</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>小魚兒</td>
+                    <td>0.8966</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>燕南天</td>
+                    <td>0.6420</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>鐵心蘭</td>
+                    <td>0.6190</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>軒轅三光</td>
+                    <td>0.5977</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>江玉郎</td>
+                    <td>0.5977</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <br />
+            <div className="rwd-component" style={{ margin: '0 auto' }}>
+              <p style={{ top: '10px', position: 'relative' }} className="text-bg">Degree Distribution</p>
+              <img
+                className="img-thumbnail img-fluid"
+                src={require('./assets/imgs/DegreeDistribution.png')} width="100%" alt="" srcSet="" />
+            </div>
+            <br />
+            {/* chart2-end */}
           </div>
           <br />
           <footer className="text-center" style={{
