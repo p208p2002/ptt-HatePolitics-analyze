@@ -44,10 +44,10 @@ export class App extends Component {
         <div id="head">
           <div id="topbar-container">
             <div id="topbar" className="bbs-content container">
-              <span id="logo">批踢踢八卦版分析</span>
+              <span id="logo">批踢踢正黑版分析</span>
               <span>›</span>
-              <span className="board"><span className="board-label">看板 </span>Gossiping</span>
-              <a className="right small" href="https://github.com/p208p2002/ptt-gossiping-relation-analyze">GitHub</a>
+              <span className="board"><span className="board-label">看板 </span>HatePolitics</span>
+              <a className="right small" href="https://github.com/p208p2002/ptt-HatePolitics-analyze">GitHub</a>
             </div>
           </div>
           <div style={{ marginTop: 40 }} className="text-center container">
