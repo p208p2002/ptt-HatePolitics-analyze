@@ -44,7 +44,7 @@ export class App extends Component {
         <div id="head">
           <div id="topbar-container">
             <div id="topbar" className="bbs-content container">
-              <span id="logo">批踢踢正黑版分析</span>
+              <span id="logo">批踢踢政黑版分析</span>
               <span>›</span>
               <span className="board"><span className="board-label">看板 </span>HatePolitics</span>
               <a className="right small" href="https://github.com/p208p2002/ptt-HatePolitics-analyze">GitHub</a>
