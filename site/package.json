@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "set PUBLIC_URL=https://p208p2002.github.io/ptt-gossiping-relation-analyze&&rm -rf ../docs/&&react-scripts build&&mv build ../docs",
+    "build": "set PUBLIC_URL=https://github.com/p208p2002/ptt-HatePolitics-analyze&&rm -rf ../docs/&&react-scripts build&&mv build ../docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
