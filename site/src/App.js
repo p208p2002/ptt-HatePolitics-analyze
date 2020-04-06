@@ -60,8 +60,8 @@ export class App extends Component {
               <br />
             </div>
             <div className="text-left ptt-text">
-              婉君跟一般人不同，一天有四十八小時<br />
-              時時刻刻守在電腦前帶風向，以下請看本人的數據分析<br />
+              婉君就在你我身邊，究竟是誰在刻意操作風向<br />
+              以下請看本人的數據分析<br />
               <br />
             </div>
 
@@ -132,28 +132,28 @@ export class App extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>小魚兒</td>
-                    <td>0.8966</td>
+                    <td>starwish00</td>
+                    <td>0.03159</td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td>燕南天</td>
-                    <td>0.6420</td>
+                    <td>magines</td>
+                    <td>0.03125</td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
-                    <td>鐵心蘭</td>
-                    <td>0.6190</td>
+                    <td>ddg00000</td>
+                    <td>0.03065</td>
                   </tr>
                   <tr>
                     <th scope="row">4</th>
-                    <td>軒轅三光</td>
-                    <td>0.5977</td>
+                    <td>joycepinky</td>
+                    <td>0.03063</td>
                   </tr>
                   <tr>
                     <th scope="row">5</th>
-                    <td>江玉郎</td>
-                    <td>0.5977</td>
+                    <td>louis222</td>
+                    <td>0.03063</td>
                   </tr>
                 </tbody>
               </table>
@@ -163,7 +163,7 @@ export class App extends Component {
               <p style={{ top: '10px', position: 'relative' }} className="text-bg">Degree Distribution</p>
               <img
                 className="img-thumbnail img-fluid"
-                src={require('./assets/imgs/DegreeDistribution.png')} width="100%" alt="" srcSet="" />
+                src={require('./assets/imgs/push.png')} width="100%" alt="" srcSet="" />
             </div>
             <br />
             {/* chart1-end */}
@@ -234,28 +234,28 @@ export class App extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>小魚兒</td>
-                    <td>0.8966</td>
+                    <td>elainakuo</td>
+                    <td>0.73582</td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td>燕南天</td>
-                    <td>0.6420</td>
+                    <td>jerrylin</td>
+                    <td>0.69784</td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
-                    <td>鐵心蘭</td>
-                    <td>0.6190</td>
+                    <td>starport</td>
+                    <td>0.53327</td>
                   </tr>
                   <tr>
                     <th scope="row">4</th>
-                    <td>軒轅三光</td>
-                    <td>0.5977</td>
+                    <td>akway</td>
+                    <td>0.48003</td>
                   </tr>
                   <tr>
                     <th scope="row">5</th>
-                    <td>江玉郎</td>
-                    <td>0.5977</td>
+                    <td>Chantaljones</td>
+                    <td>0.47826</td>
                   </tr>
                 </tbody>
               </table>
@@ -265,12 +265,34 @@ export class App extends Component {
               <p style={{ top: '10px', position: 'relative' }} className="text-bg">Degree Distribution</p>
               <img
                 className="img-thumbnail img-fluid"
-                src={require('./assets/imgs/DegreeDistribution.png')} width="100%" alt="" srcSet="" />
+                src={require('./assets/imgs/pull.png')} width="100%" alt="" srcSet="" />
             </div>
-            <br />
             {/* chart2-end */}
+
+            {/* 留言 */}
+            <br/>
+            <div className="text-left">
+              <span class="f2">※ 批踢踢政黑版分析總結</span>
+              <div className="push">
+                <span className="f1 hl push-tag text-white">推 </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span class="f3 push-content">: 根據觀察 Average degree 政黑版任何人與噓文平均相關的人高達171</span>
+              </div>
+              <div className="push">
+                <span className="f1 hl push-tag">→ </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span class="f3 push-content">: 明顯高於推文的關係</span>
+              </div>
+              <div className="push">
+                <span className="f1 hl push-tag">→ </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span class="f3 push-content">: 這代表在政黑版中噓文關注點與回應率高於推文，只要有負面的文章集中回應率較高。</span>
+                <div>
+                  <span className="ptt-text">
+                    觀察Diameter 噓文的發文者之間關係距離低於推文的發文人，再加上噓文的Transitivity依然也高於推文
+                    根據上述分析，發出噓文者們關係距離較短且非常密切，並且經常共同出現在一則噓文中，
+                    初步判斷在政黑版內應該是有網軍的存在。
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
           <br />
+
           <footer className="text-center" style={{
             width: '100%',
             color: 'rgba(0,0,0,0.7)',
