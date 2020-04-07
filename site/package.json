@@ -1,6 +1,7 @@
 {
   "name": "site",
   "version": "0.1.0",
+  "homepage": "https://p208p2002.github.io/ptt-HatePolitics-analyze",
   "private": true,
   "dependencies": {
     "3d-force-graph": "^1.60.7",
@@ -18,7 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "set PUBLIC_URL=https://p208p2002.github.io/ptt-HatePolitics-analyze&&rm -rf ../docs/&&react-scripts build&&mv build ../build",
+    "build": "react-scripts build&&mv build ../build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
