@@ -272,7 +272,7 @@ export class App extends Component {
             {/* 留言 */}
             <br/>
             <div className="text-left">
-              <span class="f2">※ 批踢踢政黑版分析總結123</span>
+              <span class="f2">※ 批踢踢政黑版分析總結</span>
               <div className="push">
                 <span className="f1 hl push-tag text-white">推 </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span class="f3 push-content">: 根據觀察 Average degree 政黑版任何人與噓文平均相關的人高達171</span>
               </div>
