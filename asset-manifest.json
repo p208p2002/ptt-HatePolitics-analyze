@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ptt-HatePolitics-analyze/static/css/main.9502ac2a.chunk.css",
-    "main.js": "/ptt-HatePolitics-analyze/static/js/main.b6266891.chunk.js",
-    "main.js.map": "/ptt-HatePolitics-analyze/static/js/main.b6266891.chunk.js.map",
+    "main.js": "/ptt-HatePolitics-analyze/static/js/main.aa49f34a.chunk.js",
+    "main.js.map": "/ptt-HatePolitics-analyze/static/js/main.aa49f34a.chunk.js.map",
     "runtime-main.js": "/ptt-HatePolitics-analyze/static/js/runtime-main.a4558a69.js",
     "runtime-main.js.map": "/ptt-HatePolitics-analyze/static/js/runtime-main.a4558a69.js.map",
     "static/js/2.0785421d.chunk.js": "/ptt-HatePolitics-analyze/static/js/2.0785421d.chunk.js",
     "static/js/2.0785421d.chunk.js.map": "/ptt-HatePolitics-analyze/static/js/2.0785421d.chunk.js.map",
     "index.html": "/ptt-HatePolitics-analyze/index.html",
-    "precache-manifest.eb6a1cdbcfad2b015581bfde34351f1d.js": "/ptt-HatePolitics-analyze/precache-manifest.eb6a1cdbcfad2b015581bfde34351f1d.js",
+    "precache-manifest.c32570b7afb0da29cc3c82179eb3122b.js": "/ptt-HatePolitics-analyze/precache-manifest.c32570b7afb0da29cc3c82179eb3122b.js",
     "service-worker.js": "/ptt-HatePolitics-analyze/service-worker.js",
     "static/css/main.9502ac2a.chunk.css.map": "/ptt-HatePolitics-analyze/static/css/main.9502ac2a.chunk.css.map",
     "static/js/2.0785421d.chunk.js.LICENSE.txt": "/ptt-HatePolitics-analyze/static/js/2.0785421d.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.a4558a69.js",
     "static/js/2.0785421d.chunk.js",
     "static/css/main.9502ac2a.chunk.css",
-    "static/js/main.b6266891.chunk.js"
+    "static/js/main.aa49f34a.chunk.js"
   ]
 }
