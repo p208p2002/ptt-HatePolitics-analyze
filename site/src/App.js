@@ -70,6 +70,8 @@ export class App extends Component {
                 共同推文關係
               </div>
               <ChartView
+                center={{x:-2227.9067890690576,y:-10177.240674924838}}
+                topNodes = {['kan8634','bizer','SSkey','FuwafuwaCAT','p1227426']}
                 width="100%"
                 height={ChartViewHeight}
                 chartID={'chart1'}
@@ -92,27 +94,27 @@ export class App extends Component {
                   <tr data-tip="節點數量">
                     <th scope="row">1</th>
                     <td>Nodes</td>
-                    <td>1620</td>
+                    <td>370</td>
                   </tr>
                   <tr data-tip="連接邊數">
                     <th scope="row">2</th>
                     <td>Edges</td>
-                    <td>26549</td>
+                    <td>2345</td>
                   </tr>
                   <tr data-tip="任一節點與其他節點產生多少連結">
                     <th scope="row">3</th>
                     <td>Average degree</td>
-                    <td>32.776543</td>
+                    <td>12.675676</td>
                   </tr>
                   <tr data-tip="任一與其他節點的最長距離">
                     <th scope="row">4</th>
                     <td>Diameter</td>
-                    <td>7</td>
+                    <td>11</td>
                   </tr>
                   <tr data-tip="傳遞性">
                     <th scope="row">5</th>
                     <td>Transitivity</td>
-                    <td>0.618714</td>
+                    <td>0.472234</td>
                   </tr>
                 </tbody>
               </table>
@@ -132,28 +134,28 @@ export class App extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>starwish00</td>
-                    <td>0.03159</td>
+                    <td>kan8634</td>
+                    <td>0.06840</td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td>magines</td>
-                    <td>0.03125</td>
+                    <td>bizer</td>
+                    <td>0.06652</td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
-                    <td>ddg00000</td>
-                    <td>0.03065</td>
+                    <td>SSkey</td>
+                    <td>0.06550</td>
                   </tr>
                   <tr>
                     <th scope="row">4</th>
-                    <td>joycepinky</td>
-                    <td>0.03063</td>
+                    <td>FuwafuwaCAT</td>
+                    <td>0.06505</td>
                   </tr>
                   <tr>
                     <th scope="row">5</th>
-                    <td>louis222</td>
-                    <td>0.03063</td>
+                    <td>p1227426</td>
+                    <td>0.06403</td>
                   </tr>
                 </tbody>
               </table>
@@ -172,6 +174,8 @@ export class App extends Component {
                 共同噓文關係
               </div>
               <ChartView
+                center={{x:-8304.494507819763,y:-19094.987961940464}}
+                topNodes = {['freedom168','kismets','jason486','anyweather','william12tw']}
                 width="100%"
                 height={ChartViewHeight}
                 chartID={'chart2'}
@@ -194,27 +198,27 @@ export class App extends Component {
                   <tr data-tip="節點數量">
                     <th scope="row">1</th>
                     <td>Nodes</td>
-                    <td>650</td>
+                    <td>66</td>
                   </tr>
                   <tr data-tip="連接邊數">
                     <th scope="row">2</th>
                     <td>Edges</td>
-                    <td>55840</td>
+                    <td>76</td>
                   </tr>
                   <tr data-tip="任一節點與其他節點產生多少連結">
                     <th scope="row">3</th>
                     <td>Average degree</td>
-                    <td>171.815385</td>
+                    <td>2.3</td>
                   </tr>
                   <tr data-tip="任一與其他節點的最長距離">
                     <th scope="row">4</th>
                     <td>Diameter</td>
-                    <td>3</td>
+                    <td>7</td>
                   </tr>
                   <tr data-tip="傳遞性">
                     <th scope="row">5</th>
                     <td>Transitivity</td>
-                    <td>0.792891</td>
+                    <td>0.148577</td>
                   </tr>
                 </tbody>
               </table>
@@ -234,28 +238,28 @@ export class App extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>elainakuo</td>
-                    <td>0.73582</td>
+                    <td>freedom168</td>
+                    <td>0.43056</td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td>jerrylin</td>
-                    <td>0.69784</td>
+                    <td>kismets</td>
+                    <td>0.32292</td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
-                    <td>starport</td>
-                    <td>0.53327</td>
+                    <td>jason486</td>
+                    <td>0.31313</td>
                   </tr>
                   <tr>
                     <th scope="row">4</th>
-                    <td>akway</td>
-                    <td>0.48003</td>
+                    <td>anyweather</td>
+                    <td>0.31</td>
                   </tr>
                   <tr>
                     <th scope="row">5</th>
-                    <td>Chantaljones</td>
-                    <td>0.47826</td>
+                    <td>william12tw</td>
+                    <td>0.30693</td>
                   </tr>
                 </tbody>
               </table>
