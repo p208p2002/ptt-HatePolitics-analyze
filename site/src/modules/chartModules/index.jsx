@@ -95,7 +95,7 @@ export class Index extends Component {
       .nodeCanvasObject((node, ctx) => {
         // add ring just for highlighted nodes
         ctx.beginPath();
-        ctx.arc(node.x, node.y, nodeSize * 3, 0, 2 * Math.PI, false);
+        ctx.arc(node.x, node.y, nodeSize * 2, 0, 2 * Math.PI, false);
         ctx.fillStyle = 'red';
         ctx.fill();
       })
