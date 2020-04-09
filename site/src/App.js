@@ -278,18 +278,21 @@ export class App extends Component {
             <div className="text-left">
               <span class="f2">※ 批踢踢政黑版分析總結</span>
               <div className="push">
-                <span className="f1 hl push-tag text-white">推 </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span class="f3 push-content">: 根據觀察 Average degree 政黑版任何人與噓文平均相關的人高達171</span>
+                <span className="f1 hl push-tag text-white">推 </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span class="f3 push-content">: 根據觀察 Average degree 政黑版任何人與推文平均相關的人高達12.676</span>
               </div>
               <div className="push">
-                <span className="f1 hl push-tag">→ </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span class="f3 push-content">: 明顯高於推文的關係</span>
+                <span className="f1 hl push-tag">→ </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span class="f3 push-content">: 明顯高於噓文的關係</span>
               </div>
               <div className="push">
-                <span className="f1 hl push-tag">→ </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span class="f3 push-content">: 這代表在政黑版中噓文關注點與回應率高於推文，只要有負面的文章集中回應率較高。</span>
+                <span className="f1 hl push-tag">→ </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span class="f3 push-content">: 這代表在政黑版中推文關注點與回應率高於噓文，只要是正面的文章，將集中回應率較高。</span>
                 <div>
                   <span className="ptt-text">
-                    觀察Diameter 噓文的發文者之間關係距離低於推文的發文人，再加上噓文的Transitivity依然也高於推文
-                    根據上述分析，發出噓文者們關係距離較短且非常密切，並且經常共同出現在一則噓文中，
-                    初步判斷在政黑版內應該是有網軍的存在。
+                    雖然推文Transitivity較高(可能代表大家都會在推文中互相留言討論)，但是推文的Diameter距離較遠(每個人之間距離比較較遠)
+                    換句話說只要有正向推文酸民們會一起推文，但是不特別集中在某一小群酸民的行為。
+                    <br/>
+                    <br/>
+                    而噓文Transitivity較低(代表酸民們互相在同一篇噓文留言討論較低)，但是Diameter距離較短(表示通常都是這一小群比較經常在開砲火)
+                    換句話說，雖然這些酸民會一起出現在同一篇噓文機率較小，但是他們之間關係卻比推文密切。
                   </span>
                 </div>
               </div>
