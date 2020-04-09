@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ptt-HatePolitics-analyze/precache-manifest.c32570b7afb0da29cc3c82179eb3122b.js"
+  "/ptt-HatePolitics-analyze/precache-manifest.b2ddc594a0f6ded5bab84c8abe1502ce.js"
 );
 
 self.addEventListener('message', (event) => {
