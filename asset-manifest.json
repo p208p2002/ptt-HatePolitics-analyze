@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/ptt-HatePolitics-analyze/static/css/main.9502ac2a.chunk.css",
-    "main.js": "/ptt-HatePolitics-analyze/static/js/main.fa03026a.chunk.js",
-    "main.js.map": "/ptt-HatePolitics-analyze/static/js/main.fa03026a.chunk.js.map",
+    "main.css": "/ptt-HatePolitics-analyze/static/css/main.8920249d.chunk.css",
+    "main.js": "/ptt-HatePolitics-analyze/static/js/main.231e2852.chunk.js",
+    "main.js.map": "/ptt-HatePolitics-analyze/static/js/main.231e2852.chunk.js.map",
     "runtime-main.js": "/ptt-HatePolitics-analyze/static/js/runtime-main.a4558a69.js",
     "runtime-main.js.map": "/ptt-HatePolitics-analyze/static/js/runtime-main.a4558a69.js.map",
-    "static/js/2.0785421d.chunk.js": "/ptt-HatePolitics-analyze/static/js/2.0785421d.chunk.js",
-    "static/js/2.0785421d.chunk.js.map": "/ptt-HatePolitics-analyze/static/js/2.0785421d.chunk.js.map",
+    "static/js/2.9dba45b2.chunk.js": "/ptt-HatePolitics-analyze/static/js/2.9dba45b2.chunk.js",
+    "static/js/2.9dba45b2.chunk.js.map": "/ptt-HatePolitics-analyze/static/js/2.9dba45b2.chunk.js.map",
     "index.html": "/ptt-HatePolitics-analyze/index.html",
-    "precache-manifest.b2ddc594a0f6ded5bab84c8abe1502ce.js": "/ptt-HatePolitics-analyze/precache-manifest.b2ddc594a0f6ded5bab84c8abe1502ce.js",
+    "precache-manifest.5c6eb3df8f8892325819d62c5b87299c.js": "/ptt-HatePolitics-analyze/precache-manifest.5c6eb3df8f8892325819d62c5b87299c.js",
     "service-worker.js": "/ptt-HatePolitics-analyze/service-worker.js",
-    "static/css/main.9502ac2a.chunk.css.map": "/ptt-HatePolitics-analyze/static/css/main.9502ac2a.chunk.css.map",
-    "static/js/2.0785421d.chunk.js.LICENSE.txt": "/ptt-HatePolitics-analyze/static/js/2.0785421d.chunk.js.LICENSE.txt",
+    "static/css/main.8920249d.chunk.css.map": "/ptt-HatePolitics-analyze/static/css/main.8920249d.chunk.css.map",
+    "static/js/2.9dba45b2.chunk.js.LICENSE.txt": "/ptt-HatePolitics-analyze/static/js/2.9dba45b2.chunk.js.LICENSE.txt",
     "static/media/pull.png": "/ptt-HatePolitics-analyze/static/media/pull.8794e009.png",
     "static/media/push.png": "/ptt-HatePolitics-analyze/static/media/push.e0b2736a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a4558a69.js",
-    "static/js/2.0785421d.chunk.js",
-    "static/css/main.9502ac2a.chunk.css",
-    "static/js/main.fa03026a.chunk.js"
+    "static/js/2.9dba45b2.chunk.js",
+    "static/css/main.8920249d.chunk.css",
+    "static/js/main.231e2852.chunk.js"
   ]
 }
