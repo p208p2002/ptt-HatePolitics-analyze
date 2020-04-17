@@ -4,13 +4,16 @@ import './App.css'
 import ReactTooltip from 'react-tooltip'
 import chartDataPOS from './assets/chart_data_pos.json'
 import chartDataNEG from './assets/chart_data_neg.json'
-var parse = require('url-parse')
+import HeatMap from './modules/heatMapModule'
+import PushHeatMapView from './PushHeatMap.jsx'
+// var parse = require('url-parse')
 export class App extends Component {
   constructor(props) {
     super(props)
     this.Graph = undefined
     this.state = {
-      isMobile: undefined
+      isMobile: undefined,
+      showView: []
     }
   }
 
@@ -27,20 +30,33 @@ export class App extends Component {
   }
 
   render() {
-    let { isMobile } = this.state
+    let { isMobile, showView } = this.state
     let mobileHeight = parseInt(window.screen.height * 0.65).toString() + "px"
     let deskTopHeight = "550px"
     let ChartViewHeight = isMobile ? mobileHeight : deskTopHeight
 
-    var parsed = parse(window.location.href);
-    console.log(window.location.href)
-    console.log(parsed.query)
-    let query = parsed.query.toString()
+    // var parsed = parse(window.location.href);
+    // console.log(window.location.href)
+    // console.log(parsed.query)
+    // let query = parsed.query.toString()
     // eslint-disable-next-line
-    let fullMode = query === '?mode=full' ? true : false
+    // let fullMode = query === '?mode=full' ? true : false
 
     return (
       <div id="ptt-relation">
+        {showView.length > 0 ?
+          <div 
+          onClick={()=>{
+            this.setState({
+              showView:[]
+            })
+          }}
+          style={{
+            position:'fixed',zIndex:99,top:0,left:0,height:'100%',width:'100%',
+            backgroundColor:'rgba(0,0,0,0.8)',overflow:'scroll',overflowX:'hidden'}}>{showView}</div>
+          : <React.Fragment />}
+
+        {/*  */}
         <div id="head">
           <div id="topbar-container">
             <div id="topbar" className="bbs-content container">
@@ -70,8 +86,8 @@ export class App extends Component {
                 共同推文關係
               </div>
               <ChartView
-                center={{x:-2227.9067890690576,y:-10177.240674924838}}
-                topNodes = {['kan8634','bizer','SSkey','FuwafuwaCAT','p1227426']}
+                center={{ x: -2227.9067890690576, y: -10177.240674924838 }}
+                topNodes={['kan8634', 'bizer', 'SSkey', 'FuwafuwaCAT', 'p1227426']}
                 width="100%"
                 height={ChartViewHeight}
                 chartID={'chart1'}
@@ -161,6 +177,29 @@ export class App extends Component {
               </table>
             </div>
             <br />
+            <div className="rwd-component heat-map" style={{ margin: '0 auto' }}>
+              <p style={{ top: '10px', position: 'relative' }} className="text-bg">帳號作息</p>
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <HeatMap />
+                </div>
+                <div className="col-12 col-md-6">
+                  <HeatMap />
+                </div>
+                <div className="col-12 col-md-6">
+                  <HeatMap />
+                </div>
+                <div className="col-12 col-md-6">
+                  <HeatMap />
+                </div>
+              </div>
+              <button className="ptt-btn w-100" onClick={() => {
+                this.setState({
+                  showView: [<PushHeatMapView />]
+                })
+              }}>查看Top 20 帳號作息</button>
+            </div>
+            <br />
             <div className="rwd-component" style={{ margin: '0 auto' }}>
               <p style={{ top: '10px', position: 'relative' }} className="text-bg">Degree Distribution</p>
               <img
@@ -174,8 +213,8 @@ export class App extends Component {
                 共同噓文關係
               </div>
               <ChartView
-                center={{x:-8304.494507819763,y:-19094.987961940464}}
-                topNodes = {['freedom168','kismets','jason486','anyweather','william12tw']}
+                center={{ x: -8304.494507819763, y: -19094.987961940464 }}
+                topNodes={['freedom168', 'kismets', 'jason486', 'anyweather', 'william12tw']}
                 width="100%"
                 height={ChartViewHeight}
                 chartID={'chart2'}
@@ -274,7 +313,7 @@ export class App extends Component {
             {/* chart2-end */}
 
             {/* 留言 */}
-            <br/>
+            <br />
             <div className="text-left">
               <span class="f2">※ 批踢踢政黑版分析總結</span>
               <div className="push">
