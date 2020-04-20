@@ -56,13 +56,14 @@ export class Index extends Component {
 
     //
     let highlightNodes = [];
-    let highlightLink = null;
+    let highlightLinks = [];
 
     //
-    let nodeSize = 50
+    let nodeSize = 70
     let { topNodes = [] } = this.props
 
     const Graph = ForceGraph()(elem)
+      // .cooldownTime(6000)
       .backgroundColor('#808080')
       .graphData(jsonData)
       .height(fullMode ? undefined : height)
@@ -72,7 +73,7 @@ export class Index extends Component {
         if (topNodes[0] === node.id) {
           return 'red' // cc top 1
         }
-        if(node.group === 2){
+        if (node.group === 2) {
           return 'blue' // random walk
         }
         return 'yellow'
@@ -92,19 +93,32 @@ export class Index extends Component {
         elem.style.cursor = node ? 'pointer' : null;
         highlightNodes = node ? [node] : [];
         elem.style.cursor = node ? '-webkit-grab' : null;
+
+        highlightLinks = []
+        for (var i = 0; i < jsonData.links.length; i++) {
+          let link = jsonData.links[i]
+
+          try {
+            if (link.source.id === node.id || link.target.id === node.id) {
+              highlightLinks.push(link)
+            }
+          } catch (error) {
+            // 
+          }
+        }
       })
       .nodeCanvasObjectMode(node => highlightNodes.indexOf(node) !== -1 ? 'before' : undefined)
       .nodeRelSize(nodeSize)
       .nodeCanvasObject((node, ctx) => {
         // add ring just for highlighted nodes
         ctx.beginPath();
-        ctx.arc(node.x, node.y, nodeSize * 2, 0, 2 * Math.PI, false);
+        ctx.arc(node.x, node.y, nodeSize * 1.2, 0, 2 * Math.PI, false);
         ctx.fillStyle = 'red';
         ctx.fill();
       })
       //link
       .onLinkHover(link => {
-        highlightLink = link;
+        highlightLinks = [link];
         highlightNodes = link ? [link.source, link.target] : [];
       })
       .linkLabel((link) => {
@@ -112,32 +126,77 @@ export class Index extends Component {
         return `${link.source.id} - ${link.target.id} ${link.value}`
       })
       .linkWidth(link => {
-        return link === highlightLink ? link.linkOptical * 8 + 5 : link.linkOptical * 0.8
+        let { source = {}, target = {} } = link
+        let linkId = undefined
+        try {
+          linkId = source.id + target.id
+        } catch (error) {
+
+        }
+        let flag = false
+
+        for (var i = 0; i < highlightLinks.length; i++) {
+          let hlLink = highlightLinks[i]
+          let hlLinkId = undefined
+          try {
+            hlLinkId = hlLink.source.id + hlLink.target.id
+          } catch (error) {
+
+          }
+          if (linkId === hlLinkId) {
+            flag = true
+            break
+          }
+        }
+
+        return flag ? link.linkOptical * 1 + 1 : link.linkOptical * 0.8
       })
       .linkDirectionalParticles(4)
-      .linkDirectionalParticleWidth(link => link === highlightLink ? 2.5 : 0)
-      .linkColor((link)=>{
-        // console.log(link)
-        // link.linkOptical /= 2
-        if(topNodes[0] === link.source.id || topNodes[0] === link.target.id){
-          return link === highlightLink?`rgba(255, 0, 255, ${link.linkOptical.toString()})`:`rgba(0, 0, 100, ${link.linkOptical*0.9.toString()})`
+      .linkDirectionalParticleWidth(link => link === highlightLinks ? 2.5 : 0)
+      .linkColor((link) => {
+        let { source = {}, target = {} } = link
+        let linkId = undefined
+        try {
+          linkId = source.id + target.id
+        } catch (error) {
+
         }
-        if(link.target.group === 2 || link.source.group === 2){
-          return link === highlightLink?`rgba(255, 0, 255, ${link.linkOptical.toString()})`:`rgba(235, 149, 50, ${link.linkOptical*0.75.toString()})`
+        let flag = false
+
+        for (var i = 0; i < highlightLinks.length; i++) {
+          let hlLink = highlightLinks[i]
+          let hlLinkId = undefined
+          try {
+            hlLinkId = hlLink.source.id + hlLink.target.id
+          } catch (error) {
+
+          }
+          if (linkId === hlLinkId) {
+            flag = true
+            break
+          }
         }
-        return link === highlightLink?`rgba(255, 0, 255, ${link.linkOptical.toString()})`:`rgba(0, 255, 255, ${link.linkOptical*0.4.toString()})`
+
+
+        if ((topNodes[0] === link.source.id || topNodes[0] === link.target.id) && (link.target.group === 2 || link.source.group === 2)) {
+          return flag?`rgba(255, 0, 0, 1)`:`rgba(0, 0, 100, ${link.linkOptical * 0.9.toString()})`
+        }
+        if (link.target.group === 2 || link.source.group === 2) {
+          return flag?`rgba(255, 0, 0, 1)`:`rgba(235, 149, 50, ${link.linkOptical * 0.6.toString()})`
+        }
+        return flag?`rgba(255, 0, 0, 1)`:`rgba(0, 255, 255, ${link.linkOptical * 0.6.toString()})`
       })
-      // .linkAutoColorBy((link) => {
-      //   return link.target
-      // });
+   
 
 
     // // Spread nodes a little wider
-    Graph.d3Force('charge').strength(-35000);
-    let { center={} } = this.props
-    let {x=0,y=0} = center
-    Graph.centerAt(x,y)
+    Graph.d3Force('charge').strength(-25000);
+    let { center = {} } = this.props
+    let { x = 0, y = 0 } = center
+    Graph.centerAt(x, y)
     Graph.zoom(0.05);
+
+
   }
   render() {
     return (
