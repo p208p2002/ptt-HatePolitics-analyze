@@ -69,8 +69,11 @@ export class Index extends Component {
       .width(fullMode ? undefined : width)
       //node
       .nodeColor((node) => {
-        if (topNodes.includes(node.id)) {
-          return 'red'
+        if (topNodes[0] === node.id) {
+          return 'red' // cc top 1
+        }
+        if(node.group === 2){
+          return 'blue' // random walk
         }
         return 'yellow'
       })
@@ -113,12 +116,17 @@ export class Index extends Component {
       })
       .linkDirectionalParticles(4)
       .linkDirectionalParticleWidth(link => link === highlightLink ? 4 : 0)
-      // .linkColor((link)=>{
-      //   return link === highlightLink?`rgba(255, 0, 255, ${link.linkOptical.toString()})`:`rgba(0, 255, 255, ${link.linkOptical.toString()})`
-      // })
-      .linkAutoColorBy((link) => {
-        return link.target
-      });
+      .linkColor((link)=>{
+        // console.log(link)
+        // link.linkOptical /= 2
+        if(topNodes[0] === link.source.id || topNodes[0] === link.target.id){
+          return link === highlightLink?`rgba(255, 0, 255, ${link.linkOptical.toString()})`:`rgba(0, 0, 100, ${link.linkOptical.toString()})`
+        }
+        return link === highlightLink?`rgba(255, 0, 255, ${link.linkOptical.toString()})`:`rgba(0, 255, 255, ${link.linkOptical*0.5.toString()})`
+      })
+      // .linkAutoColorBy((link) => {
+      //   return link.target
+      // });
 
 
     // // Spread nodes a little wider
