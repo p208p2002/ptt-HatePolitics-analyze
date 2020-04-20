@@ -120,9 +120,12 @@ export class Index extends Component {
         // console.log(link)
         // link.linkOptical /= 2
         if(topNodes[0] === link.source.id || topNodes[0] === link.target.id){
-          return link === highlightLink?`rgba(255, 0, 255, ${link.linkOptical.toString()})`:`rgba(0, 0, 100, ${link.linkOptical.toString()})`
+          return link === highlightLink?`rgba(255, 0, 255, ${link.linkOptical.toString()})`:`rgba(0, 0, 100, ${link.linkOptical*0.9.toString()})`
         }
-        return link === highlightLink?`rgba(255, 0, 255, ${link.linkOptical.toString()})`:`rgba(0, 255, 255, ${link.linkOptical*0.5.toString()})`
+        if(link.target.group === 2 || link.source.group === 2){
+          return link === highlightLink?`rgba(255, 0, 255, ${link.linkOptical.toString()})`:`rgba(235, 149, 50, ${link.linkOptical*0.75.toString()})`
+        }
+        return link === highlightLink?`rgba(255, 0, 255, ${link.linkOptical.toString()})`:`rgba(0, 255, 255, ${link.linkOptical*0.4.toString()})`
       })
       // .linkAutoColorBy((link) => {
       //   return link.target
