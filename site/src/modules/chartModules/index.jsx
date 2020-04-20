@@ -115,7 +115,7 @@ export class Index extends Component {
         return link === highlightLink ? link.linkOptical * 8 + 5 : link.linkOptical * 0.8
       })
       .linkDirectionalParticles(4)
-      .linkDirectionalParticleWidth(link => link === highlightLink ? 4 : 0)
+      .linkDirectionalParticleWidth(link => link === highlightLink ? 2.5 : 0)
       .linkColor((link)=>{
         // console.log(link)
         // link.linkOptical /= 2
