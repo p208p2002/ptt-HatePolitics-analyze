@@ -315,15 +315,15 @@ export class App extends Component {
             {/* 留言 */}
             <br />
             <div className="text-left">
-              <span class="f2">※ 批踢踢政黑版分析總結</span>
+              <span className="f2">※ 批踢踢政黑版分析總結</span>
               <div className="push">
-                <span className="f1 hl push-tag text-white">推 </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span class="f3 push-content">: 根據觀察 Average degree 政黑版任何人與推文平均相關的人高達12.676</span>
+                <span className="f1 hl push-tag text-white">推 </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span className="f3 push-content">: 根據觀察 Average degree 政黑版任何人與推文平均相關的人高達12.676</span>
               </div>
               <div className="push">
-                <span className="f1 hl push-tag">→ </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span class="f3 push-content">: 明顯高於噓文的關係</span>
+                <span className="f1 hl push-tag">→ </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span className="f3 push-content">: 明顯高於噓文的關係</span>
               </div>
               <div className="push">
-                <span className="f1 hl push-tag">→ </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span class="f3 push-content">: 這代表在政黑版中推文關注點與回應率高於噓文，只要是正面的文章，將集中回應率較高。</span>
+                <span className="f1 hl push-tag">→ </span><span className="f3 hl push-userid">Mrs.cha-shui-piao</span><span className="f3 push-content">: 這代表在政黑版中推文關注點與回應率高於噓文，只要是正面的文章，將集中回應率較高。</span>
                 <div>
                   <span className="ptt-text">
                     雖然推文Transitivity較高(可能代表大家都會在推文中互相留言討論)，但是推文的Diameter距離較遠(每個人之間距離比較較遠)

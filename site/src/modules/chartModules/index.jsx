@@ -1,16 +1,21 @@
 // import ForceGraph3D from '3d-force-graph';
 import ForceGraph from 'force-graph';
 import React, { Component } from 'react'
-
+import './index.css'
+import HeatMap from '../heatMapModule'
 
 export class Index extends Component {
   constructor(props) {
     super(props)
     this.Graph = undefined
+    this.state = {
+      hoverNode: {},
+      hoverLinks: []
+    }
   }
 
   preprocessData = (jsonData) => {
-    let LIMIT = 3000 // 限制最高連線
+    let LIMIT = 2200 // 限制最高連線
     let { links } = jsonData
 
     // 依照數值大小排序
@@ -59,9 +64,9 @@ export class Index extends Component {
     let highlightLinks = [];
 
     //
-    let nodeSize = 70
+    let nodeSize = 65
     let { topNodes = [] } = this.props
-
+    let self = this
     const Graph = ForceGraph()(elem)
       // .cooldownTime(6000)
       .backgroundColor('#808080')
@@ -97,7 +102,6 @@ export class Index extends Component {
         highlightLinks = []
         for (var i = 0; i < jsonData.links.length; i++) {
           let link = jsonData.links[i]
-
           try {
             if (link.source.id === node.id || link.target.id === node.id) {
               highlightLinks.push(link)
@@ -106,6 +110,10 @@ export class Index extends Component {
             // 
           }
         }
+        self.setState({
+          hoverNode: node === null ? undefined : node,
+          hoverLinks: highlightLinks === null ? [] : highlightLinks
+        })
       })
       .nodeCanvasObjectMode(node => highlightNodes.indexOf(node) !== -1 ? 'before' : undefined)
       .nodeRelSize(nodeSize)
@@ -126,30 +134,22 @@ export class Index extends Component {
         return `${link.source.id} - ${link.target.id} ${link.value}`
       })
       .linkWidth(link => {
-        let { source = {}, target = {} } = link
-        let linkId = undefined
-        try {
-          linkId = source.id + target.id
-        } catch (error) {
-
-        }
-        let flag = false
-
+        let { source = {}, target = {} } = link,
+          { id: sId = '' } = source,
+          { id: tId = '' } = target
+        let linkId = sId + tId
         for (var i = 0; i < highlightLinks.length; i++) {
-          let hlLink = highlightLinks[i]
-          let hlLinkId = undefined
-          try {
-            hlLinkId = hlLink.source.id + hlLink.target.id
-          } catch (error) {
+          let hlLink = highlightLinks[i] === null ? {} : highlightLinks[i],
+            { source = {}, target = {} } = hlLink,
+            { id: hlSId = '' } = source,
+            { id: hlTId = '' } = target
+          let hlLinkId = hlSId + hlTId
 
-          }
           if (linkId === hlLinkId) {
-            flag = true
-            break
+            return link.linkOptical * 1 + 1
           }
         }
-
-        return flag ? link.linkOptical * 1 + 1 : link.linkOptical * 0.8
+        return link.linkOptical * 0.8
       })
       .linkDirectionalParticles(4)
       .linkDirectionalParticleWidth(link => link === highlightLinks ? 2.5 : 0)
@@ -179,18 +179,18 @@ export class Index extends Component {
 
 
         if ((topNodes[0] === link.source.id || topNodes[0] === link.target.id) && (link.target.group === 2 || link.source.group === 2)) {
-          return flag?`rgba(255, 0, 0, 1)`:`rgba(0, 0, 100, ${link.linkOptical * 0.9.toString()})`
+          return flag ? `rgba(255, 0, 0, 1)` : `rgba(0, 0, 100, ${link.linkOptical * 0.9.toString()})`
         }
         if (link.target.group === 2 || link.source.group === 2) {
-          return flag?`rgba(255, 0, 0, 1)`:`rgba(235, 149, 50, ${link.linkOptical * 0.6.toString()})`
+          return flag ? `rgba(255, 0, 0, 1)` : `rgba(235, 149, 50, ${link.linkOptical * 0.6.toString()})`
         }
-        return flag?`rgba(255, 0, 0, 1)`:`rgba(0, 255, 255, ${link.linkOptical * 0.6.toString()})`
+        return flag ? `rgba(255, 0, 0, 1)` : `rgba(0, 255, 255, ${link.linkOptical * 0.6.toString()})`
       })
-   
+
 
 
     // // Spread nodes a little wider
-    Graph.d3Force('charge').strength(-25000);
+    Graph.d3Force('charge').strength(-20000);
     let { center = {} } = this.props
     let { x = 0, y = 0 } = center
     Graph.centerAt(x, y)
@@ -199,8 +199,33 @@ export class Index extends Component {
 
   }
   render() {
+    let { hoverLinks = [], hoverNode = {} } = this.state;
+    let { id: n_id, p: random_walk_p = '' } = hoverNode
+    console.log(hoverLinks)
+    // n_id = n_id === null?'':n_id
+    // n_group = n_group === null?'':n_group
     return (
-      <div style={{ overflow: 'hidden' }}>
+      <div style={{ overflow: 'hidden', position: 'relative' }}>
+        <div className="hover-info">
+          <span><b>節點資訊</b></span><br />
+          <span>PTT username: {n_id}</span><br />
+          <span>Random walk probability: {random_walk_p.toString().slice(0, 7)}</span>
+        </div>
+
+        <div className="hover-info-links">
+          <span><b>周圍連線</b></span><br />
+          {hoverLinks.map((link) => {
+            let linkName = link.source.id !== n_id ? link.source.id : link.target.id
+            return <span>{linkName} 共推率:{link.value.toString().slice(0, 7)}<br /></span>
+          })}
+        </div>
+
+
+        {n_id ? <div className="hover-heat-map text-center">
+          <span style={{ marginTop: 18, marginBottom: -25, display: 'block' }}>{n_id}作息熱力圖</span>
+          <HeatMap height='200' />
+        </div> : null}
+
         <div style={{ width: this.props.width, height: this.props.height }}>
           <div id={this.props.chartID} style={{ width: '100%', height: '100%' }}></div>
         </div>
