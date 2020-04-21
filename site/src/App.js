@@ -13,7 +13,7 @@ export class App extends Component {
     this.Graph = undefined
     this.state = {
       isMobile: undefined,
-      showView: []
+      showView: [],
     }
   }
 
@@ -86,7 +86,8 @@ export class App extends Component {
                 共同推文關係
               </div>
               <ChartView
-                center={{ x: -2227.9067890690576, y: -10177.240674924838 }}
+                // center={{ x: -2227.9067890690576, y: -10177.240674924838 }}
+                centerNode={'kan8634'}
                 topNodes={['kan8634', 'bizer', 'SSkey', 'FuwafuwaCAT', 'p1227426']}
                 width="100%"
                 height={ChartViewHeight}
@@ -213,7 +214,7 @@ export class App extends Component {
                 共同噓文關係
               </div>
               <ChartView
-                center={{ x: -8304.494507819763, y: -19094.987961940464 }}
+                centerNode={'freedom168'}
                 topNodes={['freedom168', 'kismets', 'jason486', 'anyweather', 'william12tw']}
                 width="100%"
                 height={ChartViewHeight}

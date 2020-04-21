@@ -10,7 +10,42 @@ export class Index extends Component {
     this.Graph = undefined
     this.state = {
       hoverNode: {},
-      hoverLinks: []
+      hoverLinks: [],
+      searchId: '',
+      graphData: {}
+    }
+  }
+
+  searchNode = (target_id) => {
+    this.setState({
+      searchId: target_id
+    })
+    let { nodes } = this.state.graphData
+    for (let i = 0; i < nodes.length; i++) {
+      let node = nodes[i]
+      if (node.id === target_id) {
+        this.Graph.centerAt(node.x, node.y)
+        this.Graph.zoom(0.07);
+        this.Graph.nodeColor((gNode) => {
+          if (gNode.id === node.id) {
+            return 'red'
+          }
+          return '#ccc'
+        })
+        setTimeout(() => {
+          let { topNodes = [] } = this.props
+          this.Graph.nodeColor((node) => {
+            if (topNodes[0] === node.id) {
+              return 'red' // cc top 1
+            }
+            if (node.group === 2) {
+              return 'blue' // random walk
+            }
+            return 'yellow'
+          })
+        }, 3000)
+        break;
+      }
     }
   }
 
@@ -68,7 +103,7 @@ export class Index extends Component {
     let { topNodes = [] } = this.props
     let self = this
     const Graph = ForceGraph()(elem)
-      // .cooldownTime(6000)
+      .cooldownTime(8000)
       .backgroundColor('#808080')
       .graphData(jsonData)
       .height(fullMode ? undefined : height)
@@ -86,6 +121,7 @@ export class Index extends Component {
       .onNodeDragEnd(node => {
         node.fx = node.x;
         node.fy = node.y;
+        Graph.cooldownTime(0)
       })
       .onNodeClick(node => {
         // Center/zoom on node
@@ -95,6 +131,7 @@ export class Index extends Component {
       })
       .nodeLabel('id')
       .onNodeHover(node => {
+        console.log(node)
         elem.style.cursor = node ? 'pointer' : null;
         highlightNodes = node ? [node] : [];
         elem.style.cursor = node ? '-webkit-grab' : null;
@@ -191,21 +228,34 @@ export class Index extends Component {
 
     // // Spread nodes a little wider
     Graph.d3Force('charge').strength(-20000);
-    let { center = {} } = this.props
-    let { x = 0, y = 0 } = center
-    Graph.centerAt(x, y)
-    Graph.zoom(0.05);
+    
+    this.setState({
+      graphData: Graph.graphData()
+    })
+    this.Graph = Graph
 
-
+    setTimeout(()=>{
+      this.searchNode(this.props.centerNode)
+      this.setState({
+        searchId:''
+      })
+    },5000)
   }
   render() {
     let { hoverLinks = [], hoverNode = {} } = this.state;
     let { id: n_id, p: random_walk_p = '' } = hoverNode
-    console.log(hoverLinks)
+    // console.log(hoverLinks)
     // n_id = n_id === null?'':n_id
     // n_group = n_group === null?'':n_group
     return (
       <div style={{ overflow: 'hidden', position: 'relative' }}>
+        <div className="graph-search">
+          <input
+            placeholder={'搜尋...'}
+            value={this.state.searchId}
+            onChange={e=>this.searchNode(e.target.value)} type="text" />
+        </div>
+
         <div className="hover-info">
           <span><b>節點資訊</b></span><br />
           <span>PTT username: {n_id}</span><br />
