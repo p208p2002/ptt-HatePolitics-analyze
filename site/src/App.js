@@ -5,7 +5,7 @@ import ReactTooltip from 'react-tooltip'
 import chartDataPOS from './assets/chart_data_pos.json'
 import chartDataNEG from './assets/chart_data_neg.json'
 import HeatMap from './modules/heatMapModule'
-import PushHeatMapView from './PushHeatMap.jsx'
+// import PushHeatMapView from './PushHeatMap.jsx'
 // var parse = require('url-parse')
 export class App extends Component {
   constructor(props) {
@@ -178,7 +178,7 @@ export class App extends Component {
               </table>
             </div>
             <br />
-            <div className="rwd-component heat-map" style={{ margin: '0 auto' }}>
+            {/* <div className="rwd-component heat-map" style={{ margin: '0 auto' }}>
               <p style={{ top: '10px', position: 'relative' }} className="text-bg">帳號作息</p>
               <div className="row">
                 <div className="col-12 col-md-6">
@@ -200,7 +200,7 @@ export class App extends Component {
                 })
               }}>查看Top 20 帳號作息</button>
             </div>
-            <br />
+            <br /> */}
             <div className="rwd-component" style={{ margin: '0 auto' }}>
               <p style={{ top: '10px', position: 'relative' }} className="text-bg">Degree Distribution</p>
               <img
