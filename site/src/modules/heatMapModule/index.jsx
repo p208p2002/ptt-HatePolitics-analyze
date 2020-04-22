@@ -33,9 +33,10 @@ class Index extends React.Component {
         console.log(userHeatMapData)
         let days = ['MON', 'TUE', 'WED', 'THR', 'FRI', 'SAT', 'SUN']
         let series = days.map((day, i) => {
+            let dayUserHeatMapData = userHeatMapData[i] || []
             return {
                 name: day,
-                data: userHeatMapData[i].map((d, i) => {
+                data: dayUserHeatMapData.map((d, i) => {
                     return {
                         x: i,
                         y: d
