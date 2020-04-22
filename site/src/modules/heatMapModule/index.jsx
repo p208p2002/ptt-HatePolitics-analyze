@@ -5,9 +5,9 @@ import HeatMapData from '../../assets/heat_map.json'
 class Index extends React.Component {
     constructor(props) {
         super(props);
-        let { height=350 } = props
+        let { height = 350 } = props
         this.state = {
-            series:[],
+            series: [],
             options: {
                 chart: {
                     height,
@@ -27,15 +27,20 @@ class Index extends React.Component {
         };
     }
 
-    componentDidMount(){
+    componentDidMount() {
         // console.log(this.state)
-        let userHeatMapData = HeatMapData[this.props.username] || []   
-        console.log(userHeatMapData)     
-        let days = ['MON','TUE','WED','THR','FRI','SAT','SUN']               
-        let series = days.map((day,i)=>{               
+        let userHeatMapData = HeatMapData[this.props.username] || []
+        console.log(userHeatMapData)
+        let days = ['MON', 'TUE', 'WED', 'THR', 'FRI', 'SAT', 'SUN']
+        let series = days.map((day, i) => {
             return {
-                name:day,
-                data:userHeatMapData[i]
+                name: day,
+                data: userHeatMapData[i].map((d, i) => {
+                    return {
+                        x: i,
+                        y: d
+                    }
+                })
             }
         })
         this.setState({
@@ -45,11 +50,11 @@ class Index extends React.Component {
 
 
     render() {
-        let { series } = this.state        
+        let { series } = this.state
         return (
             <div>
                 <div id="heatmap-chart">
-                    {series.length > 0?<Chart options={this.state.options} series={this.state.series} type="heatmap" height={this.props.height} />:null}
+                    {series.length > 0 ? <Chart options={this.state.options} series={this.state.series} type="heatmap" height={this.props.height} /> : null}
                 </div>
                 <div id="html-dist"></div>
             </div>
