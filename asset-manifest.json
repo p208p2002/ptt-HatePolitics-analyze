@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/ptt-HatePolitics-analyze/static/css/main.e7656f20.chunk.css",
-    "main.js": "/ptt-HatePolitics-analyze/static/js/main.a170548b.chunk.js",
-    "main.js.map": "/ptt-HatePolitics-analyze/static/js/main.a170548b.chunk.js.map",
+    "main.js": "/ptt-HatePolitics-analyze/static/js/main.32d3b308.chunk.js",
+    "main.js.map": "/ptt-HatePolitics-analyze/static/js/main.32d3b308.chunk.js.map",
     "runtime-main.js": "/ptt-HatePolitics-analyze/static/js/runtime-main.a4558a69.js",
     "runtime-main.js.map": "/ptt-HatePolitics-analyze/static/js/runtime-main.a4558a69.js.map",
-    "static/js/2.9d45f7c5.chunk.js": "/ptt-HatePolitics-analyze/static/js/2.9d45f7c5.chunk.js",
-    "static/js/2.9d45f7c5.chunk.js.map": "/ptt-HatePolitics-analyze/static/js/2.9d45f7c5.chunk.js.map",
+    "static/js/2.8d8be91b.chunk.js": "/ptt-HatePolitics-analyze/static/js/2.8d8be91b.chunk.js",
+    "static/js/2.8d8be91b.chunk.js.map": "/ptt-HatePolitics-analyze/static/js/2.8d8be91b.chunk.js.map",
     "index.html": "/ptt-HatePolitics-analyze/index.html",
-    "precache-manifest.1e87cd6c7f125041c8a04b57e498cacc.js": "/ptt-HatePolitics-analyze/precache-manifest.1e87cd6c7f125041c8a04b57e498cacc.js",
+    "precache-manifest.520fc91be10ff2f93617179b447c133a.js": "/ptt-HatePolitics-analyze/precache-manifest.520fc91be10ff2f93617179b447c133a.js",
     "service-worker.js": "/ptt-HatePolitics-analyze/service-worker.js",
     "static/css/main.e7656f20.chunk.css.map": "/ptt-HatePolitics-analyze/static/css/main.e7656f20.chunk.css.map",
-    "static/js/2.9d45f7c5.chunk.js.LICENSE.txt": "/ptt-HatePolitics-analyze/static/js/2.9d45f7c5.chunk.js.LICENSE.txt",
+    "static/js/2.8d8be91b.chunk.js.LICENSE.txt": "/ptt-HatePolitics-analyze/static/js/2.8d8be91b.chunk.js.LICENSE.txt",
     "static/media/pull.png": "/ptt-HatePolitics-analyze/static/media/pull.8794e009.png",
     "static/media/push.png": "/ptt-HatePolitics-analyze/static/media/push.e0b2736a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a4558a69.js",
-    "static/js/2.9d45f7c5.chunk.js",
+    "static/js/2.8d8be91b.chunk.js",
     "static/css/main.e7656f20.chunk.css",
-    "static/js/main.a170548b.chunk.js"
+    "static/js/main.32d3b308.chunk.js"
   ]
 }
