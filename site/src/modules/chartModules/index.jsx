@@ -259,7 +259,8 @@ export class Index extends Component {
             onChange={e=>this.searchNode(e.target.value)} type="text" />
         </div>
 
-        <div className="hover-info">
+        {n_id?<React.Fragment>
+          <div className="hover-info">
           <span><b>節點資訊</b></span><br />
           <span>PTT username: {n_id}</span><br />
           <span>Random walk probability: {random_walk_p.toString().slice(0, 7)}</span>
@@ -272,11 +273,12 @@ export class Index extends Component {
             return <span>{linkName} 共推率:{link.value.toString().slice(0, 7)}<br /></span>
           })}
         </div>
+        </React.Fragment>:null}
 
 
-        {n_id ? <div className="hover-heat-map text-center">
-          <span style={{ marginTop: 18, marginBottom: -25, display: 'block' }}>{n_id}作息熱力圖</span>
+        {n_id ? <div className="hover-heat-map text-center">          
           <HeatMap height='200' username={n_id} />
+          <span style={{ marginTop: -20, display: 'block' }}>{n_id}作息熱力圖</span>
         </div> : null}
 
         <div style={{ width: this.props.width, height: this.props.height }}>
