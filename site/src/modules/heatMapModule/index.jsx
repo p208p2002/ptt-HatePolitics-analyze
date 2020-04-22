@@ -1,76 +1,13 @@
 import React from 'react'
 import Chart from "react-apexcharts";
-function generateData(count, yrange) {
-    var i = 0;
-    var series = [];
-    while (i < count) {
-        var x = '' + (i + 1).toString();
-        var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+import HeatMapData from '../../assets/heat_map.json'
 
-        series.push({
-            x: x,
-            y: y
-        });
-        i++;
-    }
-    return series;
-}
 class Index extends React.Component {
     constructor(props) {
         super(props);
         let { height=350 } = props
         this.state = {
-
-            series: [{
-                name: 'M1',
-                data: generateData(24, {
-                    min: 0,
-                    max: 90
-                })
-            },
-            {
-                name: 'M2',
-                data: generateData(24, {
-                    min: 0,
-                    max: 90
-                })
-            },
-            {
-                name: 'M3',
-                data: generateData(24, {
-                    min: 0,
-                    max: 90
-                })
-            },
-            {
-                name: 'M4',
-                data: generateData(24, {
-                    min: 0,
-                    max: 90
-                })
-            },
-            {
-                name: 'M5',
-                data: generateData(18, {
-                    min: 0,
-                    max: 90
-                })
-            },
-            {
-                name: 'M6',
-                data: generateData(18, {
-                    min: 0,
-                    max: 90
-                })
-            },
-            {
-                name: 'M7',
-                data: generateData(18, {
-                    min: 0,
-                    max: 90
-                })
-            }
-            ],
+            series:[],
             options: {
                 chart: {
                     height,
@@ -87,18 +24,32 @@ class Index extends React.Component {
                     text: this.props.title
                 }
             },
-
-
         };
     }
 
+    componentDidMount(){
+        // console.log(this.state)
+        let userHeatMapData = HeatMapData[this.props.username] || []   
+        console.log(userHeatMapData)     
+        let days = ['MON','TUE','WED','THR','FRI','SAT','SUN']               
+        let series = days.map((day,i)=>{               
+            return {
+                name:day,
+                data:userHeatMapData[i]
+            }
+        })
+        this.setState({
+            series
+        })
+    }
 
 
     render() {
+        let { series } = this.state        
         return (
             <div>
                 <div id="heatmap-chart">
-                    <Chart options={this.state.options} series={this.state.series} type="heatmap" height={this.props.height} />
+                    {series.length > 0?<Chart options={this.state.options} series={this.state.series} type="heatmap" height={this.props.height} />:null}
                 </div>
                 <div id="html-dist"></div>
             </div>

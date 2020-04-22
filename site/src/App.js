@@ -4,7 +4,7 @@ import './App.css'
 import ReactTooltip from 'react-tooltip'
 import chartDataPOS from './assets/chart_data_pos.json'
 import chartDataNEG from './assets/chart_data_neg.json'
-import HeatMap from './modules/heatMapModule'
+// import HeatMap from './modules/heatMapModule'
 // import PushHeatMapView from './PushHeatMap.jsx'
 // var parse = require('url-parse')
 export class App extends Component {
