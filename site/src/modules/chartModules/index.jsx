@@ -43,14 +43,14 @@ export class Index extends Component {
             }
             return 'yellow'
           })
-        }, 3000)
+        }, 2500)
         break;
       }
     }
   }
 
   preprocessData = (jsonData) => {
-    let LIMIT = 2200 // 限制最高連線
+    let LIMIT = 3000 // 限制最高連線
     let { links } = jsonData
 
     // 依照數值大小排序
@@ -103,7 +103,8 @@ export class Index extends Component {
     let { topNodes = [] } = this.props
     let self = this
     const Graph = ForceGraph()(elem)
-      .cooldownTime(8000)
+      .warmupTicks(150)
+      .cooldownTicks(0)
       .backgroundColor('#808080')
       .graphData(jsonData)
       .height(fullMode ? undefined : height)
@@ -121,7 +122,6 @@ export class Index extends Component {
       .onNodeDragEnd(node => {
         node.fx = node.x;
         node.fy = node.y;
-        Graph.cooldownTime(0)
       })
       .onNodeClick(node => {
         // Center/zoom on node
@@ -142,6 +142,8 @@ export class Index extends Component {
           try {
             if (link.source.id === node.id || link.target.id === node.id) {
               highlightLinks.push(link)
+              highlightNodes.push(link.source)
+              highlightNodes.push(link.target)
             }
           } catch (error) {
             // 
@@ -157,7 +159,7 @@ export class Index extends Component {
       .nodeCanvasObject((node, ctx) => {
         // add ring just for highlighted nodes
         ctx.beginPath();
-        ctx.arc(node.x, node.y, nodeSize * 1.2, 0, 2 * Math.PI, false);
+        ctx.arc(node.x, node.y, nodeSize * 1.4, 0, 2 * Math.PI, false);
         ctx.fillStyle = 'red';
         ctx.fill();
       })
@@ -183,7 +185,7 @@ export class Index extends Component {
           let hlLinkId = hlSId + hlTId
 
           if (linkId === hlLinkId) {
-            return link.linkOptical * 1 + 1
+            return link.linkOptical * 1.5
           }
         }
         return link.linkOptical * 0.8
@@ -227,8 +229,8 @@ export class Index extends Component {
 
 
     // // Spread nodes a little wider
-    Graph.d3Force('charge').strength(-20000);
-    
+    Graph.d3Force('charge').strength(-22000);
+    Graph.zoom(0.05)
     this.setState({
       graphData: Graph.graphData()
     })
@@ -239,7 +241,8 @@ export class Index extends Component {
       this.setState({
         searchId:''
       })
-    },5000)
+      Graph.zoom(0.05)
+    },500)
   }
   render() {
     let { hoverLinks = [], hoverNode = {} } = this.state;
