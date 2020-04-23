@@ -1,6 +1,7 @@
 import React from 'react'
 import Chart from "react-apexcharts";
-import HeatMapData from '../../assets/heat_map.json'
+import HeatMapDataPush from '../../assets/heat_map_push.json'
+import HeatMapDataPull from '../../assets/heat_map_pull.json'
 
 class Index extends React.Component {
     constructor(props) {
@@ -28,7 +29,7 @@ class Index extends React.Component {
     }
 
     componentDidMount() {
-        // console.log(this.state)
+        let HeatMapData = Object.assign({},HeatMapDataPush,HeatMapDataPull)
         let userHeatMapData = HeatMapData[this.props.username] || []
         console.log(userHeatMapData)
         let days = ['MON', 'TUE', 'WED', 'THR', 'FRI', 'SAT', 'SUN']
