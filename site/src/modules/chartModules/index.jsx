@@ -278,7 +278,7 @@ export class Index extends Component {
 
         {n_id ? <div className="hover-heat-map text-center">          
           <HeatMap height='200' username={n_id} />
-          <span style={{ marginTop: -20, display: 'block' }}>{n_id}發文熱力圖</span>
+          <span style={{ marginTop: -20, display: 'block' }}>{n_id} 發文熱力圖</span>
         </div> : null}
 
         <div style={{ width: this.props.width, height: this.props.height }}>

@@ -13,6 +13,7 @@ class Index extends React.Component {
                 plotOptions: {
                     heatmap: {
                         colorScale: {
+                            enableShades: false,
                             ranges: [
                                 {
                                     from: 0,
@@ -51,9 +52,12 @@ class Index extends React.Component {
                     }
                 },
                 dataLabels: {
-                    enabled: false
+                    enabled: true,
+                    style: {
+                        colors: ['#fff']
+                      }
                 },
-                colors: ["#008FFB"],
+                // colors: ["#008FFB"],
                 title: {
                     text: this.props.title
                 }
