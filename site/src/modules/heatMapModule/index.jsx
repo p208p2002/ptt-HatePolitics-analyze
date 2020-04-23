@@ -10,6 +10,39 @@ class Index extends React.Component {
         this.state = {
             series: [],
             options: {
+                plotOptions: {
+                    heatmap: {
+                        colorScale: {
+                            ranges: [
+                                {
+                                    from: 0,
+                                    to: 0,
+                                    color: '#edeff2'
+                                },
+                                {
+                                    from: 1,
+                                    to: 5,
+                                    color: '#46bfdf'
+                                },
+                                {
+                                    from: 6,
+                                    to: 10,
+                                    color: '#4c96cb'
+                                },
+                                {
+                                    from: 11,
+                                    to: 15,
+                                    color: '#2771b1'
+                                },
+                                {
+                                    from: 16,
+                                    to: 999,
+                                    color: '#2f587b'
+                                },
+                            ],
+                        },
+                    }
+                },
                 chart: {
                     height,
                     type: 'heatmap',
@@ -29,7 +62,7 @@ class Index extends React.Component {
     }
 
     componentDidMount() {
-        let HeatMapData = Object.assign({},HeatMapDataPush,HeatMapDataPull)
+        let HeatMapData = Object.assign({}, HeatMapDataPush, HeatMapDataPull)
         let userHeatMapData = HeatMapData[this.props.username] || []
         console.log(userHeatMapData)
         let days = ['MON', 'TUE', 'WED', 'THR', 'FRI', 'SAT', 'SUN']
